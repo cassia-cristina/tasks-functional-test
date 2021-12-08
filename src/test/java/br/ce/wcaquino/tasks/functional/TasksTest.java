@@ -52,8 +52,8 @@ public class TasksTest {
 	
 	@Test
 	public void naoDeveSalvarTarefaSemDescricao() {
-		try {
-			driver = inicializaDriver();
+		driver = inicializaDriver();
+		try {			
 			driver.findElement(By.cssSelector("#addTodo")).click();
 			driver.findElement(By.cssSelector("input[name=dueDate]")).sendKeys("01/01/2024");
 			driver.findElement(By.cssSelector("input[value=Save]")).click();	
@@ -78,8 +78,8 @@ public class TasksTest {
 	
 	@Test
 	public void naoDeveSalvarTarefaSemDescricaoEsemData() {
-		try {
-			driver = inicializaDriver();
+		driver = inicializaDriver();
+		try {			
 			driver.findElement(By.cssSelector("#addTodo")).click();
 			driver.findElement(By.cssSelector("input[value=Save]")).click();	
 			assertEquals("Fill the task description", driver.findElement(By.className("alert-danger")).getText());
